@@ -7,7 +7,7 @@ Como hacer / How to:
 
 1. [Descargar](https://github.com/derfaq/Arduino-AM-Broadcasting/archive/master.zip) y descomprimir este repositorio.
 
-2. Reemplazar el archivo Tone.cpp de Arduino, que en windows se ecuentra en `C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino`, (es recomendable guardar una copia del original).
+2. Reemplazar el archivo Tone.cpp de Arduino, que en windows se ecuentra en `C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino`, (es *obligatorio* guardar una copia del original, para restablecer la función original cuando queramos).
 
 3. Cargar el sketch toneMelody.ino a nuestro Arduino, y conectar un cable al pin 9 (cuanto mas largo mejor).
 
