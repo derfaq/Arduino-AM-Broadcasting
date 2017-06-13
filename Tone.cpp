@@ -32,7 +32,7 @@ Version Modified By Date     Comments
 0008    S Kanemoto  12/06/22 Fixed for Leonardo by @maris_HY
 0009    J Reucker   15/04/10 Issue #292 Fixed problems with ATmega8 (thanks to Pete62)
 0010    jipp        15/04/13 added additional define check #2923
-0011    derfaq      17/06/17 change portOutputRegister to portModeRegister for 	AM broadcasting, 
+0011    F Daguerre  17/06/17 change portOutputRegister to portModeRegister for 	AM broadcasting, 
 							 and change digitalWrite to 1 in noTone(), enjoy :)
 *************************************************/
 
