@@ -3,23 +3,30 @@
 
  Plays a melody
 
- circuit:
- * 1 wire attach to pin 9
-
  created 21 Jan 2010
  modified 30 Aug 2011
  by Tom Igoe
 
- modifed 10 Jun 2017 by Facundo Daguerre (derfaq) for AM Broadcasting
-
-This example code is in the public domain.
+ This example code is in the public domain.
 
  http://www.arduino.cc/en/Tutorial/Tone
 
+ ----
+ 
+ modifed 10 Jun 2017 by Facundo Daguerre (derfaq) for AM Broadcasting
+ 
+ require change the function tone, see: https://github.com/derfaq/Arduino-AM-Broadcasting
+
+ circuit:
+  * 1 wire attach to pin 9
+
  */
+
+ 
 #include "pitches.h"
 
-#define ANTENNA  9
+#define ANTENNA 9  //define the pin 9 like antenna, attach one wire to the pin (the longer the better)
+
 // notes in the melody:
 int melody[] = {
   NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4
@@ -31,7 +38,8 @@ int noteDurations[] = {
 };
 
 void setup() {
-  //AM setup
+  //AM setup : code from @nickgammon thread https://forum.arduino.cc/index.php?topic=88422.0
+  
   TCCR1A = _BV (COM1A0);  // toggle OC1A on Compare Match (Pin 9 on Arduino Uno)
   TCCR1B = _BV(WGM12) | _BV(CS10);   // CTC, no prescaler
   /*
@@ -49,9 +57,11 @@ void setup() {
     7 - 1000 khz   (Good for test)
     6 - ~1140 khz
     5 - ~1330 khz
-    4 - 1600 khz* 
+    4 - 1600 khz
+    
+    The formula is (16÷(OCR1A+1)÷2)×1000 = frequency in khz
   */
-  OCR1A =  7;
+  OCR1A =  7; // 1000kHz
   
   pinMode(ANTENNA,OUTPUT);
   

@@ -36,7 +36,7 @@ const char song_P9[] PROGMEM =
 const char song_P10[] PROGMEM =
       "ZeldaOvrGB:d=4,o=5,b=140:8c.,16g4,g.4,8c,16c,16d,16d#,16f,g.,16a,16a#,8a.,8g.,8f,8g.,16c,1c6,8p,8g,8d#6,8d6,8d#6,8f6,8g6,16c6,16g6,c.7,8g6,8f6,8d#6,8f6,16a#,16f6,a#.6,8f6,8d#6,8d6,8d#.6,16g,g.,16g,16f,8d#,8f,1g,8c.6,16g,g.,8c6,16c6,16d6,16d#6,16f6,g.6,16g#6,16a#6,8g#6,g6,8f6,8d#.6,16c6,g.6,8d#6,8c7,8g6,d#.7,8d7,8c7,8d7,8d#7,8f7,8g7,16f7,16g7,g#.7,a#7,8g#7,g7,8d7,8d#7,8f7,8d#7,8d7,2c.7";
 
-      
+
 Rtttl player;
 
 void setup(void)
@@ -50,7 +50,7 @@ void setup(void)
    OCR1A - Frequency
    15 - 500 khz
    14 - ~530 khz
-   13 - ~570 khz   
+   13 - ~570 khz
    12 - ~610 khz
    11 - ~670 khz
    10 - ~730 khz
@@ -59,31 +59,30 @@ void setup(void)
     7 - 1000 khz   (Good for test)
     6 - ~1140 khz
     5 - ~1330 khz
-    4 - 1600 khz* 
+    4 - 1600 khz*
   */
   OCR1A =  7;
-  
+
   pinMode(ANTENNA,OUTPUT);
-  
+
 	player.begin(ANTENNA);
 }
 
 void loop(void)
 {
-  
+
   for(int i = 0; i<6;i++){
     player.play_P(song_P8, octave);
   }
   delay(500);
-  
+
   player.play_P(song_P9, octave);
-  
+
   delay(500);
-  
+
   for(int i = 0; i<6;i++){
     player.play_P(song_P10, octave);
   }
-  
+
   delay(500);
 }
-
